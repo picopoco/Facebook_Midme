@@ -1,6 +1,14 @@
+<<<<<<< HEAD
 {
   "name": "FaceBook_Test",
   "description": " FaceBook_Test",
   "repository": "https://github.com/parksangkyo/Facebook_Midme",
   "keywords": ["facebookbot", "bot", "testbot"]
+=======
+{
+  "name": "FaceBook_Test",
+  "description": " FaceBook_Test",
+  "repository": "https://github.com/parksangkyo/Facebook_Midme",
+  "keywords": ["facebookbot", "bot", "testbot"]
+>>>>>>> e1e3cd601d84b973673f88f01c1ebf2b2cd2d59c
 }
