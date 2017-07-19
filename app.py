@@ -57,8 +57,8 @@ def webhook():
                     if response == None:
                         response = messaging_text
                     '''                        
-                    ko_message = twitter_korean.normalize(messaging_text)
-                    tokens_text = twitter_korean.tokenize(ko_message)
+                    ko_message = twitter.normalize(messaging_text)
+                    tokens_text = twitter.tokenize(ko_message)
                     
                     response = tokens_text
                                             
