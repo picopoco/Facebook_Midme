@@ -43,7 +43,7 @@ def webhook():
                         
                     #Echo
                     #response = messaging_text
-                    #response = None
+                    response = None
                    
                    
                     ''' wit.ai 처리방식
