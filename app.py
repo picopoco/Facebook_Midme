@@ -1,7 +1,7 @@
 import os, sys
 from flask import Flask, request
 from pymessenger import Bot
-from konlpy.tag import Twitter
+#from konlpy.tag import Twitter
 
 twitter = Twitter()
 
@@ -41,7 +41,7 @@ def webhook():
                         
                         
                     #Echo
-                    #response = messaging_text
+                    response = messaging_text
                     #response = None
                    
                    
@@ -55,11 +55,13 @@ def webhook():
                         
                     if response == None:
                         response = messaging_text
-                    '''                        
+                    
+                    
+                    트위터 실패                    
                     tokens_text = twitter.nouns(messaging_text)
                     
                     response = tokens_text
-                                            
+                    '''                        
                                             
                                             
                     bot.send_text_message(sender_id, response)
