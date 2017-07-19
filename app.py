@@ -1,8 +1,9 @@
-import os, sys , cgi
+import os, sys
 from flask import Flask, request
 from pymessenger import Bot
-from botegine import make_reply
+from konlpy.tag import Twitter
 
+twitter = Twitter()
 
 app = Flask(__name__)
 
@@ -37,11 +38,13 @@ def webhook():
                         messaging_text = messaging_event['message']['text']
                     else:
                         messaging_text = 'no text'
-                        
+                    
+                    '''    
                         txt = form.getvalue("txt", default="")
                         if txt == "": return
                     #Echo
                     response = make_reply(txt)
+                    '''
                     #response = None
                    
                    
@@ -56,12 +59,13 @@ def webhook():
                     if response == None:
                         response = messaging_text
                     
+                    '''
+                                      
                     
-                    트위터 실패                    
-                    tokens_text = twitter.nouns(messaging_text)
+                    malist = twitter.pos(messaging_text , norm=True, stem=True)
                     
-                    response = tokens_text
-                    '''                        
+                    response = malist
+                                            
                                             
                                             
                     bot.send_text_message(sender_id, response)
