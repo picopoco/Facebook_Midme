@@ -4,7 +4,7 @@ from utils import wit_response
 from pymessenger import Bot
 from konlpy.tag import Twitter
 
-twitter = Twitter
+twitter = Twitter()
 
 app = Flask(__name__)
 
@@ -57,8 +57,7 @@ def webhook():
                     if response == None:
                         response = messaging_text
                     '''                        
-                    ko_message = twitter.normalize(messaging_text)
-                    tokens_text = twitter.tokenize(ko_message)
+                    tokens_text = twitter.nouns(messaging_text)
                     
                     response = tokens_text
                                             
