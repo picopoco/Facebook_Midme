@@ -1,9 +1,8 @@
-import os, sys
+import os, sys , cgi
 from flask import Flask, request
 from pymessenger import Bot
-#from konlpy.tag import Twitter
+from botegine import make_reply
 
-twitter = Twitter()
 
 app = Flask(__name__)
 
@@ -39,9 +38,10 @@ def webhook():
                     else:
                         messaging_text = 'no text'
                         
-                        
+                        txt = form.getvalue("txt", default="")
+                        if txt == "": return
                     #Echo
-                    response = messaging_text
+                    response = make_reply(txt)
                     #response = None
                    
                    
