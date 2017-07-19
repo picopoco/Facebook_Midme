@@ -2,6 +2,9 @@ import os, sys
 from flask import Flask, request
 from utils import wit_response
 from pymessenger import Bot
+from konlpy.tag import Twitter
+
+twitter = Twitter
 
 app = Flask(__name__)
 
@@ -40,8 +43,10 @@ def webhook():
                         
                     #Echo
                     #response = messaging_text
-                    response = None
-                    
+                    #response = None
+                   
+                   
+                    ''' wit.ai 처리방식
                     entity, value = wit_response(messaging_text)
                     
                     if entity == 'midrate':
@@ -51,6 +56,13 @@ def webhook():
                         
                     if response == None:
                         response = messaging_text
+                    '''                        
+                    ko_message = twitter_korean.normalize(messaging_text)
+                    tokens_text = twitter_korean.tokenize(ko_message)
+                    
+                    response = tokens_text
+                                            
+                                            
                                             
                     bot.send_text_message(sender_id, response)
                 
