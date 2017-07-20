@@ -1,7 +1,7 @@
 import os, sys
 from flask import Flask, request
 from pymessenger import Bot
-from konlpy.tag import Kkma
+from konlpy.tags import Kkma
 
 kkma = KKma()
 
