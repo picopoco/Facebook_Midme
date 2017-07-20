@@ -1,9 +1,9 @@
 import os, sys
 from flask import Flask, request
 from pymessenger import Bot
-from konlpy.tag import Twitter
+from konlpy.tag import Kkma
 
-twitter = Twitter()
+kkma = KKma()
 
 app = Flask(__name__)
 
@@ -62,7 +62,7 @@ def webhook():
                     '''
                                       
                     
-                    malist = twitter.pos(messaging_text , norm=True, stem=True)
+                    malist = kkma.pos(messaging_text , norm=True, stem=True)
                     
                     response = malist
                                             
